@@ -2,4 +2,5 @@
 trip_env
 
 .env
+.env/*
 
