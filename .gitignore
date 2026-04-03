@@ -2,7 +2,9 @@
 trip_env
 
 .env
-.env/*
+.env.local
+.env.*.local
 
 env
 
+.env 
