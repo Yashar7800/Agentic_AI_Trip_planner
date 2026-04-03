@@ -14,7 +14,10 @@ langchain_groq
 langgraph
 dotenv
 langchain_groq
-
+langchain-huggingface 
+sentence-transformers
+langchain-chroma
+pypdf
 -e .
 
 

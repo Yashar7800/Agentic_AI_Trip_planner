@@ -6,5 +6,6 @@ trip_env
 .env.*.local
 
 env
-
-.env 
+.env
+chroma.sqlite3
+*.bin

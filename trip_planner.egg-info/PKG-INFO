@@ -9,3 +9,5 @@ Description-Content-Type: text/markdown
 Requires-Dist: pandas>=2.3.2
 Dynamic: author
 Dynamic: author-email
+
+# AI Trip Planner
