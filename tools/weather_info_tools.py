@@ -13,7 +13,7 @@ class WeatherInfoTool:
         self.weather_service = WeatherForecastTool(self.api_key)
         self.weather_tool_list = self._setup_tools()
 
-    def _setup_tools(self) -> List:
+    def _setup_tools(self) -> List: # this function provides a list of the tools
         """"Setup all the tools for the weather forecast tool"""
 
         @tool

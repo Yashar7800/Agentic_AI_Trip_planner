@@ -13,13 +13,26 @@ from tools.currency_conversion_tools import CurrencyConversionTool
 
 
 class GraphBuilder():
-    def __init__(self):
-        self.tools = [
-            # WeatherInfoTools,
-            # PlaceSearchTool,
-            # CalculatorTool,
-            # CurrencyConversionTool
-        ]
+    def __init__(self,model_provider: str = 'groq'):
+        self.model_loader = ModelLoader(model_provider=model_provider)
+        self.llm = self.model_loader.load_llm()
+
+        self.tools = []
+        
+        self.weather_tools = WeatherInfoTools()
+        self.place_search_tools = PlaceSearchTool()
+        self.calculator_tools = CalculatorTool()
+        self.currency_convertor_tools = CurrencyConversionTool()
+
+        self.tools.extend([
+            * self.weather_tools.weather_tool_list,
+            * self.place_search_tools.place_search_tool_list,
+            * self.calculator_tools.calculator_tool_list,
+            * self.currency_convertor_tools.currency_convertor_tool_list
+        ])
+
+        self.llm_with_tools = self.llm.bind_tools(tools = self.tools)
+        self.graph = None
         self.system_prompt = SYSTEM_PROMPT
 
     def agent_function(self,state: MessageState):

@@ -13,3 +13,7 @@ class ConfigLoader:
 
 config = ConfigLoader()
 print(config['llm']['groq']['provider'])
+
+
+
+str = 'https://www.youtube.com/watch?v=5qY8L1pj-gQ&list=WL&index=12&t=555s'
